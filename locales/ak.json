@@ -1,0 +1,77 @@
+{
+    "app": {
+        "title": "Health Notifier"
+    },
+    "sidebar": {
+        "dashboard": "Dashboard",
+        "statistics": "Akontabuo",
+        "settings": "Nsesae",
+        "darkMode": "Esum Mode",
+        "lightMode": "Hann Mode"
+    },
+    "dashboard": {
+        "title": "Dashboard",
+        "subtitle": "Hwɛ wo apɔmuden nkaebɔ ne nneɛma a wopɛ.",
+        "status": "Tebea",
+        "timerRunning": "Timer no reyerɛ",
+        "timerStopped": "Timer no aggyina",
+        "save": "Kora Nsesae So",
+        "saved": "Akora So!"
+    },
+    "settings": {
+        "interval": "Ntam",
+        "intervalSubtitle": "Kyerɛ wo nkaebɔ ntam.",
+        "minutes": "Simma",
+        "custom": "Deɛ Wopɛ",
+        "smartMode": "Smart Mode",
+        "smartModeDesc": "Sesa ntam no ankasa sɛ womfa wo home.",
+        "widget": "Widget Ketewa",
+        "widgetDesc": "Kyerɛ kɔntaa ketewa wɔ wo screen so.",
+        "motivational": "Nkuranhyɛ Nsɛm",
+        "motivationalDesc": "Nya apɔmuden afotu biara.",
+        "autoLaunch": "Tu Wɔ Ahyɛase",
+        "autoLaunchDesc": "Hyɛ aseɛ bere a woabue kɔmputa no.",
+        "notificationType": "Nkaebɔ Ko",
+        "notificationTypeDesc": "Apɔmuden ko bɛn na wopɛ?",
+        "audioGuide": "Nne Kyerɛkyerɛ",
+        "audioGuideDesc": "Paw nne nkaebɔ kwan.",
+        "language": "Kasa",
+        "languageDesc": "Paw kasa a wopɛ."
+    },
+    "options": {
+        "all": "Ne Nyinaa (Video, Nne, Kyerɛw)",
+        "video": "Video Nkoaa",
+        "audio": "Nne Nkoaa",
+        "text": "Kyerɛw Nkoaa",
+        "none": "Hwee (Komm)",
+        "voice": "Nne Kyerɛkyerɛ (TTS)",
+        "chime": "Dɔn / Nnyigyei"
+    },
+    "stats": {
+        "title": "Akontabuo",
+        "subtitle": "Hwɛ wo nkɔsoɔ ne wo gyinabea.",
+        "totalBreaks": "Ahomegye Nyinaa",
+        "minutesStretched": "Simma a Wode Tretree Mu",
+        "skipped": "Deɛ Wopae Mu",
+        "completionRate": "Wie Rate",
+        "history": "Dwumadie Abakɔsɛm (Nna 7 a Atwam)"
+    },
+    "tray": {
+        "openDashboard": "Bue Dashboard",
+        "pauseResume": "Gyae/Toa So Nkaebɔ",
+        "pauseFor": "Gyae Ma...",
+        "quit": "Pue",
+        "30mins": "Simma 30",
+        "1hour": "Dɔnhwere 1",
+        "untilTomorrow": "Kɔsi Ɔkyena (9:00 AM)"
+    },
+    "overlay": {
+        "timeToStretch": "Bere a Wode Bɛtretree Mu!",
+        "followInstructions": "Di akwankyerɛ a ɛwɔ screen no so akyi.",
+        "skip": "Pae Mu / To Mu"
+    },
+    "widget": {
+        "breakTime": "Ahomegye Bere!",
+        "nextBreak": "Ahomegye a ɛdi hɔ"
+    }
+}

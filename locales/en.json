@@ -1,0 +1,77 @@
+{
+    "app": {
+        "title": "Health Notifier"
+    },
+    "sidebar": {
+        "dashboard": "Dashboard",
+        "statistics": "Statistics",
+        "settings": "Settings",
+        "darkMode": "Dark Mode",
+        "lightMode": "Light Mode"
+    },
+    "dashboard": {
+        "title": "Dashboard",
+        "subtitle": "Manage your health reminders and preferences.",
+        "status": "Status",
+        "timerRunning": "Timer is running",
+        "timerStopped": "Timer is stopped",
+        "save": "Save Preferences",
+        "saved": "Saved!"
+    },
+    "settings": {
+        "interval": "Interval",
+        "intervalSubtitle": "Set your reminder interval.",
+        "minutes": "Mins",
+        "custom": "Custom",
+        "smartMode": "Smart Mode",
+        "smartModeDesc": "Auto-adjusts interval if you skip breaks.",
+        "widget": "Mini Floating Widget",
+        "widgetDesc": "Show a small countdown on your screen.",
+        "motivational": "Motivational Tips",
+        "motivationalDesc": "Get random healthy tips as toast notifications.",
+        "autoLaunch": "Run on Startup",
+        "autoLaunchDesc": "Automatically start the app when you log in.",
+        "notificationType": "Notification Type",
+        "notificationTypeDesc": "What kind of exercises do you prefer?",
+        "audioGuide": "Audio Guide",
+        "audioGuideDesc": "Choose an audio alert style.",
+        "language": "Language",
+        "languageDesc": "Choose your preferred language."
+    },
+    "options": {
+        "all": "All (Video, Audio, Text)",
+        "video": "Video Only",
+        "audio": "Audio Only",
+        "text": "Text Only",
+        "none": "None (Silent)",
+        "voice": "Voice Guide (TTS)",
+        "chime": "Chime / Tone"
+    },
+    "stats": {
+        "title": "Statistics",
+        "subtitle": "Track your progress and consistency.",
+        "totalBreaks": "Total Breaks",
+        "minutesStretched": "Minutes Stretched",
+        "skipped": "Skipped",
+        "completionRate": "Completion Rate",
+        "history": "Activity History (Last 7 Days)"
+    },
+    "tray": {
+        "openDashboard": "Open Dashboard",
+        "pauseResume": "Pause/Resume Reminders",
+        "pauseFor": "Pause for...",
+        "quit": "Quit",
+        "30mins": "30 Minutes",
+        "1hour": "1 Hour",
+        "untilTomorrow": "Until Tomorrow (9:00 AM)"
+    },
+    "overlay": {
+        "timeToStretch": "Time to Stretch!",
+        "followInstructions": "Follow the instructions on screen.",
+        "skip": "Skip / Close"
+    },
+    "widget": {
+        "breakTime": "Break time!",
+        "nextBreak": "Next break"
+    }
+}

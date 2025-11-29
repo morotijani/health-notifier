@@ -1,0 +1,31 @@
+{
+  "name": "health-notifier-1",
+  "version": "1.0.0",
+  "description": "A desktop health reminder and exercise assistant.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/morotijani/health-notifier.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/morotijani/health-notifier/issues"
+  },
+  "homepage": "https://github.com/morotijani/health-notifier#readme",
+  "dependencies": {
+    "auto-launch": "^5.0.6",
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.13.1",
+    "electron-store": "^8.1.0"
+  },
+  "devDependencies": {
+    "electron": "^33.4.11"
+  }
+}

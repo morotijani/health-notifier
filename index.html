@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Notifier</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid p-0">
+        <div class="d-flex">
+            <!-- Sidebar -->
+            <div class="sidebar p-4 d-flex flex-column justify-content-between">
+                <div>
+                    <h4 class="mb-5 fw-bold text-primary">Health<span class="text-dark">Notifier</span></h4>
+                    <nav class="nav flex-column gap-2">
+                        <a class="nav-link active" href="#" id="nav-dashboard">
+                            <i class="bi bi-speedometer2 me-2"></i> Dashboard
+                        </a>
+                        <a class="nav-link" href="#" id="nav-stats">
+                            <i class="bi bi-bar-chart me-2"></i> Statistics
+                        </a>
+                        <a class="nav-link" href="#" id="nav-settings">
+                            <i class="bi bi-gear me-2"></i> Settings
+                        </a>
+                    </nav>
+                </div>
+                <div>
+                    <button class="btn btn-sm btn-outline-secondary w-100 mb-3" id="theme-toggle">
+                        <i class="bi bi-moon me-2"></i> Dark Mode
+                    </button>
+                    <div class="text-muted small">
+                        v1.0.0
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="main-content flex-grow-1 p-5">
+
+                <!-- Dashboard Section -->
+                <div id="dashboard-section">
+                    <header class="mb-5">
+                        <h2 class="fw-bold">Dashboard</h2>
+                        <p class="text-muted">Manage your health reminders and preferences.</p>
+                    </header>
+
+                    <!-- Status Card -->
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body p-4 d-flex justify-content-between align-items-center">
+                            <div>
+                                <h5 class="card-title fw-bold mb-1">Status</h5>
+                                <p class="card-text text-muted mb-0" id="status-text">Timer is stopped</p>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="toggle-timer"
+                                    style="width: 3em; height: 1.5em;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Settings Section -->
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body p-4">
+                                    <h5 class="card-title fw-bold mb-3">Interval</h5>
+                                    <p class="text-muted small mb-3">Set your reminder interval.</p>
+
+                                    <div class="btn-group w-100 mb-3" role="group">
+                                        <input type="radio" class="btn-check" name="interval" id="interval-45"
+                                            value="45" autocomplete="off">
+                                        <label class="btn btn-outline-primary" for="interval-45">45 Mins</label>
+
+                                        <input type="radio" class="btn-check" name="interval" id="interval-60"
+                                            value="60" autocomplete="off">
+                                        <label class="btn btn-outline-primary" for="interval-60">60 Mins</label>
+
+                                        <input type="radio" class="btn-check" name="interval" id="interval-custom"
+                                            value="custom" autocomplete="off">
+                                        <label class="btn btn-outline-primary" for="interval-custom">Custom</label>
+                                    </div>
+
+                                    <div class="mb-3" id="custom-interval-container" style="display: none;">
+                                        <label for="interval-input" class="form-label visually-hidden">Custom
+                                            Interval</label>
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" id="interval-input" min="15"
+                                                max="180" placeholder="Enter minutes">
+                                            <span class="input-group-text">min</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-check form-switch mb-3">
+                                        <input class="form-check-input" type="checkbox" id="smart-mode-toggle">
+                                        <label class="form-check-label" for="smart-mode-toggle">
+                                            <strong>Smart Mode</strong>
+                                            <div class="text-muted small" style="font-size: 0.8em; line-height: 1.2;">
+                                                Auto-adjusts interval if you skip breaks.
+                                            </div>
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check form-switch mb-3">
+                                        <input class="form-check-input" type="checkbox" id="widget-toggle">
+                                        <label class="form-check-label" for="widget-toggle">
+                                            <strong>Mini Floating Widget</strong>
+                                            <div class="text-muted small" style="font-size: 0.8em; line-height: 1.2;">
+                                                Show a small countdown on your screen.
+                                            </div>
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check form-switch mb-3">
+                                        <input class="form-check-input" type="checkbox" id="motivational-toggle">
+                                        <label class="form-check-label" for="motivational-toggle">
+                                            <strong>Motivational Tips</strong>
+                                            <div class="text-muted small" style="font-size: 0.8em; line-height: 1.2;">
+                                                Get random healthy tips as toast notifications.
+                                            </div>
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="auto-launch-toggle">
+                                        <label class="form-check-label" for="auto-launch-toggle">
+                                            <strong>Run on Startup</strong>
+                                            <div class="text-muted small" style="font-size: 0.8em; line-height: 1.2;">
+                                                Automatically start the app when you log in.
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body p-4">
+                                    <h5 class="card-title fw-bold mb-3">Notification Type</h5>
+                                    <p class="text-muted small mb-3">What kind of exercises do you prefer?</p>
+                                    <select class="form-select mb-4" id="notification-type">
+                                        <option value="all">All (Video, Audio, Text)</option>
+                                        <option value="video">Video Only</option>
+                                        <option value="audio">Audio Only</option>
+                                        <option value="text">Text Only</option>
+                                    </select>
+
+                                    <h5 class="card-title fw-bold mb-3">Audio Guide</h5>
+                                    <p class="text-muted small mb-3">Choose an audio alert style.</p>
+                                    <select class="form-select mb-4" id="audio-style">
+                                        <option value="none">None (Silent)</option>
+                                        <option value="voice">Voice Guide (TTS)</option>
+                                        <option value="chime">Chime / Tone</option>
+                                    </select>
+
+                                    <h5 class="card-title fw-bold mb-3">Language</h5>
+                                    <p class="text-muted small mb-3">Choose your preferred language.</p>
+                                    <select class="form-select" id="language-select">
+                                        <option value="en">English</option>
+                                        <option value="fr">Français</option>
+                                        <option value="ak">Akan</option>
+                                        <option value="sw">Swahili</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-5 text-end">
+                        <button class="btn btn-primary px-4 py-2" id="save-btn">Save Preferences</button>
+                    </div>
+                </div> <!-- End Dashboard Section -->
+
+                <!-- Statistics Section (Hidden by default) -->
+                <div id="stats-section" style="display: none;">
+                    <header class="mb-5">
+                        <h2 class="fw-bold">Statistics</h2>
+                        <p class="text-muted">Track your progress and consistency.</p>
+                    </header>
+
+                    <!-- Summary Cards -->
+                    <div class="row g-4 mb-5">
+                        <div class="col-md-3">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body p-4">
+                                    <h6 class="text-muted text-uppercase small fw-bold mb-2">Total Breaks</h6>
+                                    <h2 class="fw-bold text-primary mb-0" id="stat-total-breaks">0</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body p-4">
+                                    <h6 class="text-muted text-uppercase small fw-bold mb-2">Minutes Stretched</h6>
+                                    <h2 class="fw-bold text-success mb-0" id="stat-total-minutes">0</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body p-4">
+                                    <h6 class="text-muted text-uppercase small fw-bold mb-2">Skipped</h6>
+                                    <h2 class="fw-bold text-danger mb-0" id="stat-total-skipped">0</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body p-4">
+                                    <h6 class="text-muted text-uppercase small fw-bold mb-2">Completion Rate</h6>
+                                    <h2 class="fw-bold text-info mb-0" id="stat-completion-rate">0%</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chart -->
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h5 class="card-title fw-bold mb-4">Activity History (Last 7 Days)</h5>
+                            <canvas id="activityChart" style="max-height: 400px;"></canvas>
+                        </div>
+                    </div>
+                </div> <!-- End Statistics Section -->
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="renderer.js"></script>
+</body>
+
+</html>

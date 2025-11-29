@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 5px;
+            /* Space for shadow */
+            background: transparent;
+            overflow: hidden;
+            font-family: 'Segoe UI', sans-serif;
+            user-select: none;
+            -webkit-app-region: drag;
+        }
+
+        .widget {
+            background: rgba(33, 37, 41, 0.9);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            white-space: nowrap;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        .time-text {
+            font-weight: 600;
+        }
+
+        .close-btn {
+            cursor: pointer;
+            -webkit-app-region: no-drag;
+            opacity: 0.6;
+            font-size: 16px;
+            line-height: 1;
+            padding: 0 4px;
+        }
+
+        .close-btn:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="widget" id="widget">
+        <span class="time-text" id="time-display">Next break: --m</span>
+        <span class="close-btn" id="close-widget" title="Hide Widget">&times;</span>
+    </div>
+    <script src="widget-renderer.js"></script>
+</body>
+
+</html>

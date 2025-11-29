@@ -1,0 +1,72 @@
+[
+  {
+    "id": "neck-stretch",
+    "title": {
+      "en": "Neck Stretch",
+      "fr": "Étirement du Cou",
+      "ak": "Kɔn Tretree",
+      "sw": "Kunyoosha Shingo"
+    },
+    "type": "video",
+    "description": {
+      "en": "Gently tilt your head to the left, hold for 15s, then right.",
+      "fr": "Inclinez doucement la tête vers la gauche, maintenez 15s, puis vers la droite.",
+      "ak": "Brɛoo, kyea wo ti kɔ benkum, kura mu 15s, afei nifa.",
+      "sw": "Inamisha kichwa chako kushoto kwa upole, shikilia kwa 15s, kisha kulia."
+    },
+    "duration": 30,
+    "mediaUrl": "assets/neck-stretch.mp4"
+  },
+  {
+    "id": "wrist-roll",
+    "title": {
+      "en": "Wrist Rolls",
+      "fr": "Roulements de Poignet",
+      "ak": "Nsa Bakɔn Tretree",
+      "sw": "Mzunguko wa Kifundo cha Mkono"
+    },
+    "type": "text",
+    "description": {
+      "en": "Extend your arms and rotate your wrists in circles. 10 times each direction.",
+      "fr": "Étendez vos bras et faites tourner vos poignets en cercles. 10 fois dans chaque sens.",
+      "ak": "Teɛ wo nsa na kyim wo bakɔn. Mpɛn 10 kɔ benkum ne nifa.",
+      "sw": "Nyosha mikono yako na kuzungusha vifundo vya mikono. Mara 10 kila upande."
+    },
+    "duration": 30
+  },
+  {
+    "id": "eye-rest",
+    "title": {
+      "en": "20-20-20 Rule",
+      "fr": "Règle du 20-20-20",
+      "ak": "20-20-20 Mmara",
+      "sw": "Kanuni ya 20-20-20"
+    },
+    "type": "audio",
+    "description": {
+      "en": "Look at something 20 feet away for 20 seconds.",
+      "fr": "Regardez quelque chose à 6 mètres (20 pieds) pendant 20 secondes.",
+      "ak": "Hwɛ biribi a ɛwɔ akyirikyiri (anammɔn 20) nkyɛn simma 20.",
+      "sw": "Angalia kitu kilicho umbali wa futi 20 kwa sekunde 20."
+    },
+    "duration": 20,
+    "mediaUrl": "assets/eye-rest-guide.mp3"
+  },
+  {
+    "id": "stand-up",
+    "title": {
+      "en": "Stand Up & Stretch",
+      "fr": "Levez-vous et Étirez-vous",
+      "ak": "Sɔre na Tretree Mu",
+      "sw": "Simama na Kunyoosha"
+    },
+    "type": "text",
+    "description": {
+      "en": "Stand up from your chair and reach for the sky. Hold for 10 seconds.",
+      "fr": "Levez-vous de votre chaise et tendez les bras vers le ciel. Maintenez 10 secondes.",
+      "ak": "Sɔre fi wo nkongua so na fa wo nsa kɔ soro. Kura mu simma 10.",
+      "sw": "Simama kutoka kwenye kiti chako na ufikie angani. Shikilia kwa sekunde 10."
+    },
+    "duration": 30
+  }
+]

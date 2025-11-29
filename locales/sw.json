@@ -1,0 +1,77 @@
+{
+    "app": {
+        "title": "Health Notifier"
+    },
+    "sidebar": {
+        "dashboard": "Dashibodi",
+        "statistics": "Takwimu",
+        "settings": "Mipangilio",
+        "darkMode": "Hali ya Giza",
+        "lightMode": "Hali ya Mwanga"
+    },
+    "dashboard": {
+        "title": "Dashibodi",
+        "subtitle": "Dhibiti vikumbusho vyako vya afya na mapendeleo.",
+        "status": "Hali",
+        "timerRunning": "Kipima muda kinaendelea",
+        "timerStopped": "Kipima muda kimesimama",
+        "save": "Hifadhi Mapendeleo",
+        "saved": "Imehifadhiwa!"
+    },
+    "settings": {
+        "interval": "Muda",
+        "intervalSubtitle": "Weka muda wa kikumbusho chako.",
+        "minutes": "Dakika",
+        "custom": "Maalum",
+        "smartMode": "Hali Mahiri",
+        "smartModeDesc": "Hurekebisha muda kiotomatiki ukiruka mapumziko.",
+        "widget": "Widget Ndogo",
+        "widgetDesc": "Onyesha hesabu ndogo kwenye skrini yako.",
+        "motivational": "Vidokezo vya Hamasa",
+        "motivationalDesc": "Pata vidokezo vya afya bila mpangilio.",
+        "autoLaunch": "Endesha Wakati wa Kuanza",
+        "autoLaunchDesc": "Anza programu kiotomatiki unapoingia.",
+        "notificationType": "Aina ya Arifa",
+        "notificationTypeDesc": "Unapendelea mazoezi ya aina gani?",
+        "audioGuide": "Mwongozo wa Sauti",
+        "audioGuideDesc": "Chagua mtindo wa tahadhari ya sauti.",
+        "language": "Lugha",
+        "languageDesc": "Chagua lugha unayopendelea."
+    },
+    "options": {
+        "all": "Yote (Video, Sauti, Maandishi)",
+        "video": "Video Pekee",
+        "audio": "Sauti Pekee",
+        "text": "Maandishi Pekee",
+        "none": "Hakuna (Kimya)",
+        "voice": "Mwongozo wa Sauti (TTS)",
+        "chime": "Kengele / Toni"
+    },
+    "stats": {
+        "title": "Takwimu",
+        "subtitle": "Fuatilia maendeleo yako na uthabiti.",
+        "totalBreaks": "Jumla ya Mapumziko",
+        "minutesStretched": "Dakika za Kunyoosha",
+        "skipped": "Imerukwa",
+        "completionRate": "Kiwango cha Kukamilisha",
+        "history": "Historia ya Shughuli (Siku 7 Zilizopita)"
+    },
+    "tray": {
+        "openDashboard": "Fungua Dashibodi",
+        "pauseResume": "Sitisha/Endelea Vikumbusho",
+        "pauseFor": "Sitisha kwa...",
+        "quit": "Toka",
+        "30mins": "Dakika 30",
+        "1hour": "Saa 1",
+        "untilTomorrow": "Hadi Kesho (3:00 Asubuhi)"
+    },
+    "overlay": {
+        "timeToStretch": "Wakati wa Kunyoosha!",
+        "followInstructions": "Fuata maagizo kwenye skrini.",
+        "skip": "Ruka / Funga"
+    },
+    "widget": {
+        "breakTime": "Wakati wa mapumziko!",
+        "nextBreak": "Mapumziko yajayo"
+    }
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Notifier Overlay</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="overlay-mode">
+    <div class="overlay-container">
+        <h1 class="display-4 fw-bold mb-4" id="exercise-title">Time to Stretch!</h1>
+
+        <div id="media-container" class="mb-4">
+            <!-- Media content injected here -->
+        </div>
+
+        <p class="lead mb-5" id="exercise-description">Follow the instructions on screen.</p>
+
+        <div class="timer-ring" id="timer-ring">
+            <span id="timer-value">30</span>
+        </div>
+
+        <div class="mt-4">
+            <button class="btn btn-outline-light btn-sm rounded-pill px-4" id="skip-btn">Skip / Close</button>
+        </div>
+    </div>
+
+    <script>
+        const skipBtn = document.getElementById('skip-btn');
+        const timerValue = document.getElementById('timer-value');
+        let timeLeft = 30;
+        let interval = null;
+
+        // Close / Skip
+        skipBtn.addEventListener('click', () => {
+            closeWithAnimation('skipped');
+        });
+
+        // Start Timer
+        function startTimer() {
+            if (interval) clearInterval(interval);
+            timeLeft = 30;
+            timerValue.innerText = timeLeft;
+
+            interval = setInterval(() => {
+                timeLeft--;
+                timerValue.innerText = timeLeft;
+
+                if (timeLeft <= 0) {
+                    clearInterval(interval);
+                    closeWithAnimation('completed', 30);
+                }
+            }, 1000);
+        }
+
+        function closeWithAnimation(status, duration = 0) {
+            if (window.speechSynthesis) window.speechSynthesis.cancel();
+            if (interval) clearInterval(interval);
+
+            document.body.classList.remove('visible');
+
+            // Wait for transition to finish (500ms)
+            setTimeout(() => {
+                window.api.logStat(status, duration);
+                window.api.closeOverlay();
+            }, 500);
+        }
+
+        // Receive Data
+        window.api.onExerciseData((data) => {
+            // Handle both old format (just exercise) and new format ({exercise, settings})
+            let exercise = data;
+            let settings = null;
+
+            if (data.exercise) {
+                exercise = data.exercise;
+                settings = data.settings;
+            }
+
+            const lang = (settings && settings.language) ? settings.language : 'en';
+
+            // Fetch translations for overlay static text
+            window.api.getTranslations(lang).then(t => {
+                if (t && t.overlay) {
+                    document.getElementById('skip-btn').innerText = t.overlay.skip;
+                }
+
+                // Set Exercise Content (Multilingual)
+                const title = (typeof exercise.title === 'object') ? (exercise.title[lang] || exercise.title['en']) : exercise.title;
+                const description = (typeof exercise.description === 'object') ? (exercise.description[lang] || exercise.description['en']) : exercise.description;
+
+                document.getElementById('exercise-title').innerText = title;
+                document.getElementById('exercise-description').innerText = description;
+
+                // Handle Audio
+                if (settings && settings.audioStyle) {
+                    if (settings.audioStyle === 'voice') {
+                        // Text-to-Speech
+                        const utterance = new SpeechSynthesisUtterance(`${title}. ${description}`);
+                        utterance.lang = lang; // Try to set language
+                        speechSynthesis.speak(utterance);
+                    } else if (settings.audioStyle === 'chime') {
+                        // Play Chime
+                        const audio = new Audio('assets/audio/chime.mp3');
+                        audio.play().catch(e => console.error("Error playing chime:", e));
+                    }
+                }
+            });
+
+            const mediaContainer = document.getElementById('media-container');
+            mediaContainer.innerHTML = ''; // Clear previous
+
+            if (exercise.type === 'video') {
+                // In a real app, you'd use a local video file or embed
+                mediaContainer.innerHTML = `<div class="placeholder-video">VIDEO: ${exercise.title}</div>`;
+            } else if (exercise.type === 'image') {
+                mediaContainer.innerHTML = `<div class="placeholder-image">IMAGE: ${exercise.title}</div>`;
+            }
+
+            // Start the timer when data is received
+            startTimer();
+
+            // Trigger Fade In
+            setTimeout(() => {
+                document.body.classList.add('visible');
+            }, 50);
+        });
+
+        // Listen for settings updates to change language dynamically
+        window.api.onSettingsUpdated((settings) => {
+            const lang = settings.language || 'en';
+            window.api.getTranslations(lang).then(t => {
+                if (t && t.overlay) {
+                    document.getElementById('skip-btn').innerText = t.overlay.skip;
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

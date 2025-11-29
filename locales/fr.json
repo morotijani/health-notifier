@@ -1,0 +1,77 @@
+{
+    "app": {
+        "title": "Health Notifier"
+    },
+    "sidebar": {
+        "dashboard": "Tableau de bord",
+        "statistics": "Statistiques",
+        "settings": "Paramètres",
+        "darkMode": "Mode Sombre",
+        "lightMode": "Mode Clair"
+    },
+    "dashboard": {
+        "title": "Tableau de bord",
+        "subtitle": "Gérez vos rappels de santé et préférences.",
+        "status": "Statut",
+        "timerRunning": "Le minuteur est activé",
+        "timerStopped": "Le minuteur est arrêté",
+        "save": "Enregistrer",
+        "saved": "Enregistré !"
+    },
+    "settings": {
+        "interval": "Intervalle",
+        "intervalSubtitle": "Définissez votre intervalle de rappel.",
+        "minutes": "Min",
+        "custom": "Personnalisé",
+        "smartMode": "Mode Intelligent",
+        "smartModeDesc": "Ajuste l'intervalle si vous sautez des pauses.",
+        "widget": "Mini Widget Flottant",
+        "widgetDesc": "Afficher un petit compte à rebours sur votre écran.",
+        "motivational": "Conseils de Motivation",
+        "motivationalDesc": "Recevez des conseils santé aléatoires.",
+        "autoLaunch": "Lancer au démarrage",
+        "autoLaunchDesc": "Démarrer l'application automatiquement à la connexion.",
+        "notificationType": "Type de Notification",
+        "notificationTypeDesc": "Quel type d'exercices préférez-vous ?",
+        "audioGuide": "Guide Audio",
+        "audioGuideDesc": "Choisissez un style d'alerte audio.",
+        "language": "Langue",
+        "languageDesc": "Choisissez votre langue préférée."
+    },
+    "options": {
+        "all": "Tout (Vidéo, Audio, Texte)",
+        "video": "Vidéo Uniquement",
+        "audio": "Audio Uniquement",
+        "text": "Texte Uniquement",
+        "none": "Aucun (Silencieux)",
+        "voice": "Guide Vocal (TTS)",
+        "chime": "Carillon / Sonnerie"
+    },
+    "stats": {
+        "title": "Statistiques",
+        "subtitle": "Suivez vos progrès et votre régularité.",
+        "totalBreaks": "Total des Pauses",
+        "minutesStretched": "Minutes d'Étirement",
+        "skipped": "Sautés",
+        "completionRate": "Taux de Réussite",
+        "history": "Historique d'Activité (7 derniers jours)"
+    },
+    "tray": {
+        "openDashboard": "Ouvrir le Tableau de bord",
+        "pauseResume": "Pause/Reprendre Rappels",
+        "pauseFor": "Pause pour...",
+        "quit": "Quitter",
+        "30mins": "30 Minutes",
+        "1hour": "1 Heure",
+        "untilTomorrow": "Jusqu'à Demain (9h00)"
+    },
+    "overlay": {
+        "timeToStretch": "C'est l'heure de s'étirer !",
+        "followInstructions": "Suivez les instructions à l'écran.",
+        "skip": "Passer / Fermer"
+    },
+    "widget": {
+        "breakTime": "Pause !",
+        "nextBreak": "Prochaine pause"
+    }
+}
