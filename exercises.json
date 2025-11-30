@@ -68,5 +68,39 @@
       "sw": "Simama kutoka kwenye kiti chako na ufikie angani. Shikilia kwa sekunde 10."
     },
     "duration": 30
+  },
+  {
+    "id": "shoulder-rolls",
+    "title": {
+      "en": "Shoulder Rolls",
+      "fr": "Roulements d'Épaules",
+      "ak": "Abatwɛn Tretree",
+      "sw": "Mizunguko ya Mabega"
+    },
+    "type": "text",
+    "description": {
+      "en": "Roll your shoulders forward 5 times, then backward 5 times.",
+      "fr": "Faites rouler vos épaules vers l'avant 5 fois, puis vers l'arrière 5 fois.",
+      "ak": "Kyim wo abatwɛn kɔ anim mpɛn 5, afei kɔ akyi mpɛn 5.",
+      "sw": "Zungusha mabega yako mbele mara 5, kisha nyuma mara 5."
+    },
+    "duration": 20
+  },
+  {
+    "id": "desk-stretch",
+    "title": {
+      "en": "Desk Stretch",
+      "fr": "Étirement au Bureau",
+      "ak": "Adwumayɛbea Tretree",
+      "sw": "Kunyoosha Dawati"
+    },
+    "type": "text",
+    "description": {
+      "en": "While seated, interlace your fingers and push your palms towards the ceiling. Hold for 15 seconds.",
+      "fr": "Assis, entrelacez vos doigts et poussez vos paumes vers le plafond. Maintenez 15 secondes.",
+      "ak": "Woatena ase, fa wo nsa ntam na tyia wo nsa nkyɛn kɔ soro. Kura mu simma 15.",
+      "sw": "Ukiwa umeketi, unganisha vidole vyako na sukuma viganja vyako kuelekea dari. Shikilia kwa sekunde 15."
+    },
+    "duration": 25
   }
 ]

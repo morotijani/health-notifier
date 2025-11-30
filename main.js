@@ -64,7 +64,16 @@ const motivationalTips = [
     "Take a deep breath and relax your shoulders.",
     "Look away from the screen at something 20 feet away.",
     "Stretch your neck gently from side to side.",
-    "Stand up and do a quick stretch."
+    "Stand up and do a quick stretch.",
+    "Take a short walk to clear your head.",
+    "Practice mindfulness for a few minutes.",
+    "Listen to some calming music.",
+    "Do a quick desk stretch for your wrists and arms.",
+    "Hydrate! Grab a glass of water.",
+    "Give your eyes a break from the screen.",
+    "Stretch your legs and move around.",
+    "Take a moment to appreciate something positive.",
+    "Re-focus with a quick breathing exercise."
 ];
 
 // Dashboard Window

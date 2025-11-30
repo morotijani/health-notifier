@@ -1,5 +1,5 @@
 {
-  "name": "health-notifier-1",
+  "name": "health-notifier",
   "version": "1.0.0",
   "description": "A desktop health reminder and exercise assistant.",
   "main": "main.js",
