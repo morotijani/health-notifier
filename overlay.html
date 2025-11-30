@@ -34,6 +34,7 @@
         const timerValue = document.getElementById('timer-value');
         let timeLeft = 30;
         let interval = null;
+        let currentSettings = null; // Store settings globally
 
         // Close / Skip
         skipBtn.addEventListener('click', () => {
@@ -61,6 +62,18 @@
             if (window.speechSynthesis) window.speechSynthesis.cancel();
             if (interval) clearInterval(interval);
 
+            // Play completion sound if applicable
+            if (status === 'completed' && currentSettings) {
+                if (currentSettings.audioStyle === 'voice') {
+                    const utterance = new SpeechSynthesisUtterance("Break completed. Well done!");
+                    utterance.lang = currentSettings.language || 'en';
+                    speechSynthesis.speak(utterance);
+                } else if (currentSettings.audioStyle === 'chime') {
+                    const audio = new Audio('assets/audio/chime.mp3');
+                    audio.play().catch(e => console.error("Error playing completion chime:", e));
+                }
+            }
+
             document.body.classList.remove('visible');
 
             // Wait for transition to finish (500ms)
@@ -79,6 +92,19 @@
             if (data.exercise) {
                 exercise = data.exercise;
                 settings = data.settings;
+                currentSettings = settings; // Store globally
+            }
+
+            const skippedToday = data.skippedToday || 0;
+            const skipLimit = 4;
+
+            if (skippedToday >= skipLimit) {
+                skipBtn.disabled = true;
+                skipBtn.innerText = "No Skips Left";
+                skipBtn.classList.add('disabled');
+            } else {
+                skipBtn.disabled = false;
+                skipBtn.classList.remove('disabled');
             }
 
             const lang = (settings && settings.language) ? settings.language : 'en';
@@ -86,7 +112,9 @@
             // Fetch translations for overlay static text
             window.api.getTranslations(lang).then(t => {
                 if (t && t.overlay) {
-                    document.getElementById('skip-btn').innerText = t.overlay.skip;
+                    if (!skipBtn.disabled) {
+                        document.getElementById('skip-btn').innerText = t.overlay.skip;
+                    }
                 }
 
                 // Set Exercise Content (Multilingual)
@@ -96,7 +124,7 @@
                 document.getElementById('exercise-title').innerText = title;
                 document.getElementById('exercise-description').innerText = description;
 
-                // Handle Audio
+                // Handle Audio (Start of break)
                 if (settings && settings.audioStyle) {
                     if (settings.audioStyle === 'voice') {
                         // Text-to-Speech

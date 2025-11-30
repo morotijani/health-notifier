@@ -16,6 +16,7 @@
         "timerRunning": "Le minuteur est activé",
         "timerStopped": "Le minuteur est arrêté",
         "save": "Enregistrer",
+        "reset": "Réinitialiser",
         "saved": "Enregistré !"
     },
     "settings": {

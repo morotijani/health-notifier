@@ -455,3 +455,20 @@ saveBtn.addEventListener('click', () => {
         }, 2000);
     });
 });
+
+// Reset Button Logic
+const resetBtn = document.getElementById('reset-btn');
+if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+        // Use a simple confirm for now, or a custom modal if preferred.
+        // Since we are in renderer, we can use standard confirm.
+        if (confirm('Are you sure you want to reset all settings and statistics to default? This cannot be undone.')) {
+            window.api.resetSettings();
+        }
+    });
+}
+
+// Listen for reset success to reload UI
+window.api.onResetSuccess(() => {
+    window.location.reload();
+});

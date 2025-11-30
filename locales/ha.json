@@ -1,0 +1,78 @@
+{
+    "app": {
+        "title": "Health Notifier"
+    },
+    "sidebar": {
+        "dashboard": "Allon Aiki",
+        "statistics": "Kididdiga",
+        "settings": "Saituna",
+        "darkMode": "Yanayin Duhu",
+        "lightMode": "Yanayin Haske"
+    },
+    "dashboard": {
+        "title": "Allon Aiki",
+        "subtitle": "Sarrafa tunatarwar lafiyar ku da abubuwan da kuke so.",
+        "status": "Matsayi",
+        "timerRunning": "Mai ƙidayar lokaci yana aiki",
+        "timerStopped": "Mai ƙidayar lokaci ya tsaya",
+        "save": "Ajiye Saituna",
+        "reset": "Mayar da Yadda Yake",
+        "saved": "An Ajiye!"
+    },
+    "settings": {
+        "interval": "Lokaci",
+        "intervalSubtitle": "Saita lokacin tunatarwa.",
+        "minutes": "Minti",
+        "custom": "Na Musamman",
+        "smartMode": "Yanayin Mai Wayo",
+        "smartModeDesc": "Yana daidaita lokaci da kansa idan kun tsallake hutu.",
+        "widget": "Karamin Widget",
+        "widgetDesc": "Nuna karamin ƙidayar lokaci akan allonku.",
+        "motivational": "Nasihun Ƙarfafawa",
+        "motivationalDesc": "Samun nasihun lafiya na bazuwar.",
+        "autoLaunch": "Fara da Kunna Kwamfuta",
+        "autoLaunchDesc": "Fara app ta atomatik lokacin da kuka shiga.",
+        "notificationType": "Nau'in Sanarwa",
+        "notificationTypeDesc": "Wane irin motsa jiki kuke so?",
+        "audioGuide": "Jagoran Murya",
+        "audioGuideDesc": "Zaɓi salon sautin faɗakarwa.",
+        "language": "Harshe",
+        "languageDesc": "Zaɓi yaren da kuke so."
+    },
+    "options": {
+        "all": "Duka (Bidiyo, Murya, Rubutu)",
+        "video": "Bidiyo Kawai",
+        "audio": "Murya Kawai",
+        "text": "Rubutu Kawai",
+        "none": "Babu (Shiru)",
+        "voice": "Jagoran Murya (TTS)",
+        "chime": "Ƙararrawa"
+    },
+    "stats": {
+        "title": "Kididdiga",
+        "subtitle": "Bibiyar ci gaban ku da daidaito.",
+        "totalBreaks": "Jimlar Hutu",
+        "minutesStretched": "Mintuna da aka Mike",
+        "skipped": "An Tsallake",
+        "completionRate": "Yawan Kammalawa",
+        "history": "Tarihin Aiki (Kwanaki 7 na Ƙarshe)"
+    },
+    "tray": {
+        "openDashboard": "Bude Allon Aiki",
+        "pauseResume": "Dakatar/Ci gaba da Tunatarwa",
+        "pauseFor": "Dakatar na...",
+        "quit": "Fita",
+        "30mins": "Minti 30",
+        "1hour": "Awa 1",
+        "untilTomorrow": "Har zuwa Gobe (9:00 AM)"
+    },
+    "overlay": {
+        "timeToStretch": "Lokacin Mikewa!",
+        "followInstructions": "Bi umarnin kan allo.",
+        "skip": "Tsallake / Rufe"
+    },
+    "widget": {
+        "breakTime": "Lokacin Hutu!",
+        "nextBreak": "Hutu na gaba"
+    }
+}

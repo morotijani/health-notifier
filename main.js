@@ -21,7 +21,7 @@ const defaultSettings = {
     motivationalTipsEnabled: false,
     autoLaunch: false,
     audioStyle: 'voice', // none, voice, chime
-    language: 'en' // en, fr, ak, sw
+    language: 'en' // en, fr, ak, sw, ha
 };
 
 // Load Locale
@@ -215,7 +215,11 @@ function createOverlayWindow(exercise) {
     overlayWindow.webContents.once('did-finish-load', () => {
         console.log('Overlay loaded. Sending data.');
         const settings = store.get('settings', defaultSettings);
-        overlayWindow.webContents.send('exercise-data', { exercise, settings });
+        const stats = store.get('stats', defaultStats);
+        const today = new Date().toISOString().split('T')[0];
+        const skippedToday = (stats.dailyHistory[today] && stats.dailyHistory[today].skipped) || 0;
+
+        overlayWindow.webContents.send('exercise-data', { exercise, settings, skippedToday });
         // Log that a reminder was shown
         updateStats('shown', 0);
     });
@@ -456,7 +460,7 @@ function updateStats(type, duration = 0) {
 
         if (settings.smartMode) {
             const newInterval = currentIntervalMinutes + 15;
-            const maxInterval = 120;
+            const maxInterval = 120; // Maximum interval in minutes (2 hours)
 
             if (newInterval <= maxInterval) {
                 console.log(`Smart Mode: Break skipped. Increasing interval to ${newInterval} mins.`);
@@ -471,9 +475,6 @@ function updateStats(type, duration = 0) {
 
     store.set('stats', stats);
 
-    if (dashboardWindow) {
-        dashboardWindow.webContents.send('stats-updated', stats);
-    }
 }
 
 // App Ready
@@ -619,12 +620,7 @@ ipcMain.on('stop-timer', () => {
     store.set('settings.enabled', false);
 });
 
-// IPC Close Overlay
-ipcMain.on('close-overlay', () => {
-    if (overlayWindow) {
-        overlayWindow.close();
-    }
-});
+
 
 // IPC Minimize App
 ipcMain.on('minimize-app', () => {
@@ -670,4 +666,20 @@ ipcMain.on('toggle-motivational', (event, enabled) => {
     } else {
         stopMotivationalTimer();
     }
+});
+
+// Reset Settings
+ipcMain.on('reset-settings', (event) => {
+    store.set('settings', defaultSettings);
+    store.set('stats', defaultStats);
+
+    // Broadcast change
+    const win = BrowserWindow.getAllWindows()[0];
+    if (win) {
+        win.webContents.send('settings-updated', defaultSettings);
+        win.webContents.send('stats-updated', defaultStats);
+    }
+
+    // Send success back
+    event.reply('reset-settings-success');
 });

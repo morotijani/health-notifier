@@ -16,6 +16,7 @@
         "timerRunning": "Timer is running",
         "timerStopped": "Timer is stopped",
         "save": "Save Preferences",
+        "reset": "Reset to Default",
         "saved": "Saved!"
     },
     "settings": {

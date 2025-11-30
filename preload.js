@@ -20,5 +20,9 @@ contextBridge.exposeInMainWorld('api', {
     // General
     minimizeApp: () => ipcRenderer.send('minimize-app'),
     closeApp: () => ipcRenderer.send('close-app'),
-    onUpdateTimerUI: (callback) => ipcRenderer.on('update-timer-ui', (event, enabled) => callback(enabled))
+    onUpdateTimerUI: (callback) => ipcRenderer.on('update-timer-ui', (event, enabled) => callback(enabled)),
+
+    // Reset
+    resetSettings: () => ipcRenderer.send('reset-settings'),
+    onResetSuccess: (callback) => ipcRenderer.on('reset-settings-success', () => callback())
 });
