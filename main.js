@@ -215,14 +215,24 @@ function createOverlayWindow(exercise) {
             nodeIntegration: false,
             contextIsolation: true
         },
-        skipTaskbar: true
+        skipTaskbar: true,
+        focusable: true // Ensure it can take focus
     });
+
+    // Force highest priority
+    overlayWindow.setAlwaysOnTop(true, 'screen-saver');
+    overlayWindow.setVisibleOnAllWorkspaces(true, { visibleOnFullScreen: true });
 
     overlayWindow.loadFile('overlay.html');
 
     // Send exercise data once loaded
     overlayWindow.webContents.once('did-finish-load', () => {
         console.log('Overlay loaded. Sending data.');
+
+        // Force show and focus
+        overlayWindow.show();
+        overlayWindow.focus();
+
         const settings = store.get('settings', defaultSettings);
         const stats = store.get('stats', defaultStats);
         const today = new Date().toISOString().split('T')[0];

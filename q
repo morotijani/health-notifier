@@ -1,0 +1,43 @@
+[1mdiff --git a/index.html b/index.html[m
+[1mindex addc730..c1f7634 100644[m
+[1m--- a/index.html[m
+[1m+++ b/index.html[m
+[36m@@ -109,7 +109,7 @@[m
+                                         <label for="interval-input" class="form-label visually-hidden">Custom[m
+                                             Interval</label>[m
+                                         <div class="input-group">[m
+[31m-                                            <input type="number" class="form-control" id="interval-input" min="20"[m
+[32m+[m[32m                                            <input type="number" class="form-control" id="interval-input" min="2"[m
+                                                 max="60" placeholder="Enter minutes">[m
+                                             <span class="input-group-text">min</span>[m
+                                         </div>[m
+[1mdiff --git a/main.js b/main.js[m
+[1mindex 6cb5fc2..f7db531 100644[m
+[1m--- a/main.js[m
+[1m+++ b/main.js[m
+[36m@@ -215,14 +215,24 @@[m [mfunction createOverlayWindow(exercise) {[m
+             nodeIntegration: false,[m
+             contextIsolation: true[m
+         },[m
+[31m-        skipTaskbar: true[m
+[32m+[m[32m        skipTaskbar: true,[m
+[32m+[m[32m        focusable: true // Ensure it can take focus[m
+     });[m
+ [m
+[32m+[m[32m    // Force highest priority[m
+[32m+[m[32m    overlayWindow.setAlwaysOnTop(true, 'screen-saver');[m
+[32m+[m[32m    overlayWindow.setVisibleOnAllWorkspaces(true, { visibleOnFullScreen: true });[m
+[32m+[m
+     overlayWindow.loadFile('overlay.html');[m
+ [m
+     // Send exercise data once loaded[m
+     overlayWindow.webContents.once('did-finish-load', () => {[m
+         console.log('Overlay loaded. Sending data.');[m
+[32m+[m
+[32m+[m[32m        // Force show and focus[m
+[32m+[m[32m        overlayWindow.show();[m
+[32m+[m[32m        overlayWindow.focus();[m
+[32m+[m
+         const settings = store.get('settings', defaultSettings);[m
+         const stats = store.get('stats', defaultStats);[m
+         const today = new Date().toISOString().split('T')[0];[m
