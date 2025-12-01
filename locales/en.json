@@ -6,6 +6,7 @@
         "dashboard": "Dashboard",
         "statistics": "Statistics",
         "settings": "Settings",
+        "help": "Help",
         "darkMode": "Dark Mode",
         "lightMode": "Light Mode"
     },
@@ -56,6 +57,14 @@
         "skipped": "Skipped",
         "completionRate": "Completion Rate",
         "history": "Activity History (Last 7 Days)"
+    },
+    "help": {
+        "title": "User Guide",
+        "subtitle": "Learn how to use Health Notifier effectively.",
+        "aboutTitle": "About Health Notifier",
+        "aboutDesc": "Health Notifier is designed to help you maintain a healthy workflow by reminding you to take breaks, stretch, and rest your eyes. It runs quietly in the background and alerts you when it's time to step away from the screen.",
+        "howToTitle": "How to Use",
+        "featuresTitle": "Key Features"
     },
     "tray": {
         "openDashboard": "Open Dashboard",

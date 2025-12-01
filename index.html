@@ -20,19 +20,22 @@
                 <div>
                     <h4 class="mb-5 fw-bold text-primary">Health<span class="text-dark">Notifier</span></h4>
                     <nav class="nav flex-column gap-2">
-                        <a class="nav-link active" href="#" id="nav-dashboard">
+                        <button class="nav-link active text-start" id="nav-dashboard">
                             <i class="bi bi-speedometer2 me-2"></i> Dashboard
-                        </a>
-                        <a class="nav-link" href="#" id="nav-stats">
+                        </button>
+                        <button class="nav-link text-start" id="nav-stats">
                             <i class="bi bi-bar-chart me-2"></i> Statistics
-                        </a>
-                        <a class="nav-link" href="#" id="nav-settings">
+                        </button>
+                        <button class="nav-link text-start" id="nav-settings">
                             <i class="bi bi-gear me-2"></i> Settings
-                        </a>
+                        </button>
+                        <button class="nav-link text-start" id="nav-help">
+                            <i class="bi bi-question-circle me-2"></i> Help
+                        </button>
                     </nav>
                 </div>
                 <div>
-                    <button class="btn btn-sm btn-outline-secondary w-100 mb-3" id="theme-toggle">
+                    <button class="btn btn-outline-secondary w-100 mb-3" id="theme-toggle">
                         <i class="bi bi-moon me-2"></i> Dark Mode
                     </button>
                     <div class="text-muted small">
@@ -64,8 +67,15 @@
                             </div>
                         </div>
                     </div>
+                </div> <!-- End Dashboard Section -->
 
-                    <!-- Settings Section -->
+                <!-- Settings Section (Hidden by default) -->
+                <div id="settings-section" style="display: none;">
+                    <header class="mb-5">
+                        <h2 class="fw-bold">Settings</h2>
+                        <p class="text-muted">Configure your preferences.</p>
+                    </header>
+
                     <div class="row g-4">
                         <div class="col-md-6">
                             <div class="card border-0 shadow-sm h-100">
@@ -178,7 +188,7 @@
                         <button class="btn btn-outline-danger px-4 py-2 me-2" id="reset-btn">Reset to Default</button>
                         <button class="btn btn-primary px-4 py-2" id="save-btn">Save Preferences</button>
                     </div>
-                </div> <!-- End Dashboard Section -->
+                </div> <!-- End Settings Section -->
 
                 <!-- Statistics Section (Hidden by default) -->
                 <div id="stats-section" style="display: none;">
@@ -231,6 +241,51 @@
                         </div>
                     </div>
                 </div> <!-- End Statistics Section -->
+
+                <!-- Help Section (Hidden by default) -->
+                <div id="help-section" style="display: none;">
+                    <header class="mb-5">
+                        <h2 class="fw-bold">User Guide</h2>
+                        <p class="text-muted">Learn how to use Health Notifier effectively.</p>
+                    </header>
+
+                    <div class="row g-4">
+                        <div class="col-12">
+                            <div class="card border-0 shadow-sm">
+                                <div class="card-body p-4">
+                                    <h4 class="fw-bold mb-3 text-primary">About Health Notifier</h4>
+                                    <p class="mb-4">Health Notifier is designed to help you maintain a healthy workflow
+                                        by reminding you to take breaks, stretch, and rest your eyes. It runs quietly in
+                                        the background and alerts you when it's time to step away from the screen.</p>
+
+                                    <h4 class="fw-bold mb-3 text-primary">How to Use</h4>
+                                    <ol class="mb-4">
+                                        <li class="mb-2"><strong>Set your Interval:</strong> Go to the Dashboard and
+                                            choose how often you want to be reminded (e.g., every 45 minutes).</li>
+                                        <li class="mb-2"><strong>Start the Timer:</strong> Toggle the switch in the
+                                            "Status" card to ON. The app will now track your time.</li>
+                                        <li class="mb-2"><strong>Take a Break:</strong> When the timer runs out, a
+                                            full-screen overlay will appear with a suggested exercise. Follow the
+                                            instructions!</li>
+                                        <li class="mb-2"><strong>Track Progress:</strong> Check the Statistics tab to
+                                            see how many breaks you've taken and how consistent you are.</li>
+                                    </ol>
+
+                                    <h4 class="fw-bold mb-3 text-primary">Key Features</h4>
+                                    <ul class="mb-0">
+                                        <li class="mb-2"><strong>Smart Mode:</strong> If enabled, the app learns from
+                                            your behavior. If you skip a break, it might suggest a shorter interval next
+                                            time or lock the screen (optional future feature).</li>
+                                        <li class="mb-2"><strong>Notification Types:</strong> Choose between Video,
+                                            Audio, or Text alerts depending on your environment.</li>
+                                        <li class="mb-2"><strong>Mini Widget:</strong> A small floating timer that stays
+                                            on top of other windows so you can always see your remaining time.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- End Help Section -->
 
             </div>
         </div>

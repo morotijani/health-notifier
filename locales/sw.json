@@ -6,6 +6,7 @@
         "dashboard": "Dashibodi",
         "statistics": "Takwimu",
         "settings": "Mipangilio",
+        "help": "Msaada",
         "darkMode": "Hali ya Giza",
         "lightMode": "Hali ya Mwanga"
     },
@@ -56,6 +57,14 @@
         "skipped": "Imerukwa",
         "completionRate": "Kiwango cha Kukamilisha",
         "history": "Historia ya Shughuli (Siku 7 Zilizopita)"
+    },
+    "help": {
+        "title": "Mwongozo wa Mtumiaji",
+        "subtitle": "Jifunze jinsi ya kutumia Health Notifier kwa ufanisi.",
+        "aboutTitle": "Kuhusu Health Notifier",
+        "aboutDesc": "Health Notifier imeundwa kukusaidia kudumisha mtiririko mzuri wa kazi kwa kukukumbusha kupumzika, kunyoosha, na kupumzisha macho yako.",
+        "howToTitle": "Jinsi ya Kutumia",
+        "featuresTitle": "Vipengele Muhimu"
     },
     "tray": {
         "openDashboard": "Fungua Dashibodi",

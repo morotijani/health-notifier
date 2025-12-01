@@ -6,6 +6,7 @@
         "dashboard": "Tableau de bord",
         "statistics": "Statistiques",
         "settings": "Paramètres",
+        "help": "Aide",
         "darkMode": "Mode Sombre",
         "lightMode": "Mode Clair"
     },
@@ -56,6 +57,14 @@
         "skipped": "Sautés",
         "completionRate": "Taux de Réussite",
         "history": "Historique d'Activité (7 derniers jours)"
+    },
+    "help": {
+        "title": "Guide de l'Utilisateur",
+        "subtitle": "Apprenez à utiliser Health Notifier efficacement.",
+        "aboutTitle": "À propos de Health Notifier",
+        "aboutDesc": "Health Notifier est conçu pour vous aider à maintenir un flux de travail sain en vous rappelant de faire des pauses, de vous étirer et de reposer vos yeux.",
+        "howToTitle": "Comment Utiliser",
+        "featuresTitle": "Fonctionnalités Clés"
     },
     "tray": {
         "openDashboard": "Ouvrir le Tableau de bord",

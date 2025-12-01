@@ -17,8 +17,11 @@ const saveBtn = document.getElementById('save-btn');
 const navDashboard = document.getElementById('nav-dashboard');
 const navStats = document.getElementById('nav-stats');
 const navSettings = document.getElementById('nav-settings');
+const navHelp = document.getElementById('nav-help'); // Added
 const dashboardSection = document.getElementById('dashboard-section');
 const statsSection = document.getElementById('stats-section');
+const settingsSection = document.getElementById('settings-section'); // Added
+const helpSection = document.getElementById('help-section');
 
 // Stats Elements
 const statTotalBreaks = document.getElementById('stat-total-breaks');
@@ -109,6 +112,7 @@ function applyTranslations() {
     document.getElementById('nav-dashboard').innerHTML = `<i class="bi bi-speedometer2 me-2"></i> ${t.sidebar.dashboard}`;
     document.getElementById('nav-stats').innerHTML = `<i class="bi bi-bar-chart me-2"></i> ${t.sidebar.statistics}`;
     document.getElementById('nav-settings').innerHTML = `<i class="bi bi-gear me-2"></i> ${t.sidebar.settings}`;
+    document.getElementById('nav-help').innerHTML = `<i class="bi bi-question-circle me-2"></i> ${t.sidebar.help}`; // Added
     updateThemeIcon(document.body.getAttribute('data-theme') === 'dark');
 
     // Dashboard
@@ -188,6 +192,25 @@ function applyTranslations() {
     }
 
     document.querySelector('#stats-section .card-title').innerText = t.stats.history;
+
+    // Help
+    if (t.help) {
+        document.querySelector('#help-section header h2').innerText = t.help.title;
+        document.querySelector('#help-section header p').innerText = t.help.subtitle;
+
+        const helpCard = document.querySelector('#help-section .card-body');
+        if (helpCard) {
+            helpCard.querySelectorAll('h4')[0].innerText = t.help.aboutTitle;
+            helpCard.querySelectorAll('p')[0].innerText = t.help.aboutDesc;
+
+            helpCard.querySelectorAll('h4')[1].innerText = t.help.howToTitle;
+            // Note: Steps are hardcoded in HTML for now, but titles can be translated.
+            // Ideally, we'd rebuild the list dynamically or target each LI.
+            // For simplicity in this iteration, we'll just translate headers and main text blocks.
+
+            helpCard.querySelectorAll('h4')[2].innerText = t.help.featuresTitle;
+        }
+    }
 }
 
 // Theme Toggle Logic
@@ -254,28 +277,46 @@ navDashboard.addEventListener('click', (e) => {
     showSection('dashboard');
 });
 
-navSettings.addEventListener('click', (e) => {
-    e.preventDefault();
-    showSection('dashboard');
-});
-
 navStats.addEventListener('click', (e) => {
     e.preventDefault();
     showSection('stats');
     loadStats(); // Refresh on view
 });
 
+navSettings.addEventListener('click', (e) => {
+    e.preventDefault();
+    showSection('settings');
+});
+
+navHelp.addEventListener('click', (e) => {
+    e.preventDefault();
+    showSection('help');
+});
+
 function showSection(section) {
+    // Hide all first
+    dashboardSection.style.display = 'none';
+    statsSection.style.display = 'none';
+    settingsSection.style.display = 'none';
+    helpSection.style.display = 'none';
+
+    navDashboard.classList.remove('active');
+    navStats.classList.remove('active');
+    navSettings.classList.remove('active');
+    navHelp.classList.remove('active');
+
     if (section === 'dashboard') {
         dashboardSection.style.display = 'block';
-        statsSection.style.display = 'none';
         navDashboard.classList.add('active');
-        navStats.classList.remove('active');
-    } else {
-        dashboardSection.style.display = 'none';
+    } else if (section === 'stats') {
         statsSection.style.display = 'block';
-        navDashboard.classList.remove('active');
         navStats.classList.add('active');
+    } else if (section === 'settings') {
+        settingsSection.style.display = 'block';
+        navSettings.classList.add('active');
+    } else if (section === 'help') {
+        helpSection.style.display = 'block';
+        navHelp.classList.add('active');
     }
 }
 
@@ -416,11 +457,14 @@ saveBtn.addEventListener('click', () => {
     }
 
     if (isCustom) {
-        selectedInterval = intervalInput.value;
+        const val = parseInt(intervalInput.value);
+        if (isNaN(val) || val < 20 || val > 60) {
+            alert('Please enter a custom interval between 20 and 60 minutes.');
+            intervalInput.focus();
+            return;
+        }
+        selectedInterval = val;
     }
-
-    // Validate
-    if (selectedInterval < 1) selectedInterval = 1; // Minimum safety
 
     const settings = {
         enabled: toggleTimer.checked,

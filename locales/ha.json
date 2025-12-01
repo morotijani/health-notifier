@@ -6,6 +6,7 @@
         "dashboard": "Allon Aiki",
         "statistics": "Kididdiga",
         "settings": "Saituna",
+        "help": "Taimako",
         "darkMode": "Yanayin Duhu",
         "lightMode": "Yanayin Haske"
     },
@@ -56,6 +57,14 @@
         "skipped": "An Tsallake",
         "completionRate": "Yawan Kammalawa",
         "history": "Tarihin Aiki (Kwanaki 7 na Ƙarshe)"
+    },
+    "help": {
+        "title": "Jagoran Mai Amfani",
+        "subtitle": "Koyi yadda ake amfani da Health Notifier yadda ya kamata.",
+        "aboutTitle": "Game da Health Notifier",
+        "aboutDesc": "An tsara Health Notifier don taimaka muku kiyaye kyakkyawan yanayin aiki ta hanyar tunatar da ku don yin hutu, mikewa, da huta idanunku.",
+        "howToTitle": "Yadda Ake Amfani",
+        "featuresTitle": "Mahimman Abubuwa"
     },
     "tray": {
         "openDashboard": "Bude Allon Aiki",
