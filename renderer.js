@@ -425,6 +425,12 @@ function renderChart(history) {
 toggleTimer.addEventListener('change', (e) => {
     const isEnabled = e.target.checked;
     updateStatus(isEnabled);
+
+    // Auto-save the timer state immediately
+    window.api.getSettings().then(currentSettings => {
+        const newSettings = { ...currentSettings, enabled: isEnabled };
+        window.api.saveSettings(newSettings);
+    });
 });
 
 function updateStatus(enabled) {

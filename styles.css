@@ -22,7 +22,7 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
     overflow: hidden;
@@ -156,7 +156,7 @@ h6 {
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
     overflow: hidden;
